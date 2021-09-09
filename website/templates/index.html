@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Movie Recommendations</title>
+<!--
+
+Lava Landing Page
+
+https://templatemo.com/tm-540-lava-landing-page
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/font-awesome.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/templatemo-lava.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles/owl-carousel.css') }}">
+
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">
+                            My Movies
+                        </a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        <ul class="nav">
+                            <li class="scroll-to-section"><a href="#welcome" class="menu-item">Home</a></li>
+                            <li class="scroll-to-section"><a href="#select-movies" class="menu-item">Select Movies</a></li>
+                            <li class="scroll-to-section"><a href="#recs" class="menu-item">My Recommendations</a>
+                            </li>
+
+                            <li class="scroll-to-section"><a href="#about" class="menu-item">About</a></li>
+                        </ul>
+                        <a class='menu-trigger'>
+                            <span>Menu</span>
+                        </a>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+
+
+    <!-- ***** Welcome Area Start ***** -->
+    <div class="welcome-area" id="welcome">
+
+        <!-- ***** Header Text Start ***** -->
+        <div class="header-text">
+            <div class="container">
+                <div class="row">
+                    <div class="left-text col-lg-6 col-md-12 col-sm-12 col-xs-12"
+                        data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                        <h1>All Your Movie Recommendations <em>in ONE place</em></h1>
+                        <p>My Movies is a movie recommendation site built to provide you with the best recommendations from four major streaming platforms
+                          (Netflix, Hulu, Prime Video, and Disney+). Just pick a genre and get your recommendations!
+                           </p>
+                        <a href="#select-movies" class="main-button-slider">Choose Your Preferences!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ***** Header Text End ***** -->
+    </div>
+    <!-- ***** Welcome Area End ***** -->
+
+    <!-- ***** Features Big Item Start ***** -->
+
+    <section class="section" id="select-movies">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <h3>Drama</h3>
+                            <img src="{{ url_for('static',filename='images/drama_2.png') }}" alt="">
+                            <h4><i>{{genres['drama'][0]}}</i></h4>
+                            <p>{{genres['drama'][1]}}</p>
+                            <a href="#recs" class="main-button">
+                                Get Recommendations!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <h3>Comedy</h3>
+                            <img src="{{ url_for('static',filename='images/comedy_2.png') }}" alt="">
+                            <h4><i>{{genres['comedy'][0]}}</i></h4>
+                            <p>{{genres['comedy'][1]}}
+                            </p>
+                            <a href="#recs" class="main-button">
+                                Get Recommendations!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <h3>Action</h3>
+                            <img src="{{ url_for('static',filename='images/action_2.png') }}" alt="">
+                            <h4><i>{{genres['action'][0]}}</i></h4>
+                            <p>{{genres['action'][1]}}</p>
+                            <a href="#recs" class="main-button">
+                                Get Recommendations!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- duplicate rows start -->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <h3>Horror</h3>
+                            <img src="{{ url_for('static',filename='images/horror_2.png') }}" alt="">
+                            <h4><i>{{genres['horror'][0]}}</i></h4>
+                            <p>{{genres['horror'][1]}}</p>
+                            <a href="#recs" class="main-button">
+                                Get Recommendations!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter bottom move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <h3>Animation</h3>
+                            <img src="{{ url_for('static',filename='images/animation.png') }}" alt="">
+                            <h4><i>{{genres['animation'][0]}}</i></h4>
+                            <p>{{genres['animation'][1]}}</p>
+                            <a href="#recs" class="main-button">
+                                Get Recommendations!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12"
+                    data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <div class="features-item">
+                        <div class="features-icon">
+                            <h3>Adventure</h3>
+                            <img src="{{ url_for('static',filename='images/adventure.png') }}" alt="">
+                            <h4><i>{{genres['adventure'][0]}}</i></h4>
+                            <p>{{genres['adventure'][1]}}</p>
+                            <a href="#recs" class="main-button">
+                                Get Recommendations!
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- duplicate rows end -->
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+    <!-- ***** Features Big Item Start ***** -->
+    <!--<br></br> -->
+    <section class="section" id="recs">
+        <!-- Start of First Half -->
+        <div class="container">
+            <h1 align="center">Your Movies</h1>
+            <br></br>
+            <div class="row">
+                <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="{{ url_for('static',filename='images/recs_image_1.png') }}"  class="rounded img-fluid d-block mx-auto" alt="App">
+                    <img src="{{ url_for('static',filename='images/recs_image_2.png') }}"  class="rounded img-fluid d-block mx-auto" alt="App">
+                    <img src="{{ url_for('static',filename='images/recs_image_1.png') }}"  class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+                <br></br>
+                <br></br>
+                <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
+                    <ul>
+                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                            <div class="text">
+                                <h3>Drama For You:</h3>
+                                <h4><i>{{recs['drama'][0]}}</i></h4>
+                                <p>{{recs['drama'][1]}}</p>
+                                <p align="center"><strong>Where to Stream:</strong></p>
+                                <p align="center">
+                                    {% for i in recs['drama'][2] %}
+                                    {{ i }}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </li>
+                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
+                            <div class="text">
+                                <h3>Comedy For You:</h3>
+                                <h4><i>{{recs['comedy'][0]}}</i></h4>
+                                <p>{{recs['comedy'][1]}}</p>
+                                <p align="center"><strong>Where to Stream:</strong></p>
+                                <p align="center">
+                                    {% for i in recs['comedy'][2] %}
+                                    {{ i }}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </li>
+                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.6s">
+                            <div class="text">
+                                <h3>Action For You:</h3>
+                                <h4><i>{{recs['action'][0]}}</i></h4>
+                                <p>{{recs['action'][1]}}</p>
+                                <p align="center"><strong>Where to Stream:</strong></p>
+                                <p align="center">
+                                    {% for i in recs['action'][2] %}
+                                    {{ i }}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End of First Half-->
+        <br></br>
+        <!-- Start of Second Half-->
+        <div class="container">
+            <div class="row">
+                <div class="left-image col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix-big"
+                    data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <img src="{{ url_for('static',filename='images/recs_image_1.png') }}"  class="rounded img-fluid d-block mx-auto" alt="App">
+                    <img src="{{ url_for('static',filename='images/recs_image_2.png') }}"  class="rounded img-fluid d-block mx-auto" alt="App">
+                    <img src="{{ url_for('static',filename='images/recs_image_1.png') }}"  class="rounded img-fluid d-block mx-auto" alt="App">
+                </div>
+                <br></br>
+                <br></br>
+                <div class="right-text offset-lg-1 col-lg-6 col-md-12 col-sm-12 mobile-bottom-fix">
+                    <ul>
+                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                            <div class="text">
+                                <h3>Horror For You:</h3>
+                                <h4><i>{{recs['horror'][0]}}</i></h4>
+                                <p>{{recs['horror'][1]}}</p>
+                                <p align="center"><strong>Where to Stream:</strong></p>
+                                <p align="center">
+                                    {% for i in recs['horror'][2] %}
+                                    {{ i }}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </li>
+                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.5s">
+                            <div class="text">
+                                <h3>Animation For You:</h3>
+                                <h4><i>{{recs['animation'][0]}}</i></h4>
+                                <p>{{recs['animation'][1]}}</p>
+                                <p align="center"><strong>Where to Stream:</strong></p>
+                                <p align="center">
+                                    {% for i in recs['animation'][2] %}
+                                    {{ i }}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </li>
+                        <li data-scroll-reveal="enter right move 30px over 0.6s after 0.6s">
+                            <div class="text">
+                                <h3>Adventure For You:</h3>
+                                <h4><i>{{recs['adventure'][0]}}</i></h4>
+                                <p>{{recs['adventure'][1]}}</p>
+                                <p align="center"><strong>Where to Stream:</strong></p>
+                                <p align="center">
+                                    {% for i in recs['adventure'][2] %}
+                                    {{ i }}
+                                    {% endfor %}
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End of Second Half-->
+    </section>
+    <!-- ***** Features Big Item End ***** -->
+
+    <!-- ***** Testimonials Starts ***** -->
+
+    <!-- ***** Testimonials Ends ***** -->
+
+
+    <!-- ***** Footer Start ***** -->
+    <footer id="about">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+                    <div class="right-content col-lg-6 col-md-12 col-sm-12">
+                        <h2>About <em>My Movies</em></h2>
+                        <p>Hi, there! My name is Nati Marcus and I created My Movies as part of
+                          <a href="https://generalassemb.ly" target="_blank">General Assembly</a>'s
+                           <a href="https://generalassemb.ly/education/data-science-immersive-remote" target="_blank"> Data Science Immersive</a> Course.
+                          I hope you enjoy what My Movies has to offer! More updates are soon to come!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="sub-footer">
+                        <p>Copyright &copy; 2020 Lava Landing Page
+
+                        | Designed by <a rel="nofollow" href="https://templatemo.com">TemplateMo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="{{ url_for('static',filename='styles/jquery-2.1.0.min.js') }}"></script>
+
+    <!-- Bootstrap -->
+    <script src="{{ url_for('static',filename='styles/popper.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/bootstrap.min.js') }}"></script>
+
+    <!-- Plugins -->
+    <script src="{{ url_for('static',filename='styles/owl-carousel.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/scrollreveal.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/waypoints.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/jquery.counterup.min.js') }}"></script>
+    <script src="{{ url_for('static',filename='styles/imgfix.min.js') }}"></script>
+
+    <!-- Global Init -->
+    <script src="{{ url_for('static',filename='styles/custom.js') }}"></script>
+
+</body>
+</html>
